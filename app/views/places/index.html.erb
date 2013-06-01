@@ -1,9 +1,10 @@
-<h1>Listing places</h1>
+<h1></h1>
 
 <table class="table table-striped">
-  <tr>
+ <tr>
     <th>Name</th>
     <th>Address</th>
+    <th>City</th>
     <th>Zip</th>
     <th>Country</th>
     <th>Comments</th>
@@ -11,7 +12,7 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+ </tr>
 
 <br/>
 <%= gmaps4rails(@pins) %>
@@ -21,17 +22,19 @@
   <tr>
     <td><%= place.name %></td>
     <td><%= place.address %></td>
+    <td><%= place.city %></td>
     <td><%= place.zip %></td>
     <td><%= place.country %></td>
     <td><%= truncate(place.comments, :length => 20) if place.comments.present? %></td>
     <td><%= image_tag(place.picture_url, :width => 60) if place.picture.present? %></td>
     <td><%= link_to 'Show', place, class: 'btn btn-success' %></td>
     <td><%= link_to 'Edit', edit_place_path(place), class: 'btn btn-warning' %></td>
-    <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+    <td><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Place', new_place_path %>
+<%= link_to 'Add A New Place', new_place_path, class: 'btn btn-large btn-block btn-primary' %>
+<br />

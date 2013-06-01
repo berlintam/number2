@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="navbar-inner">
+			<div class="container"><a class="brand" href="/"> Our Number Two App</a>
+		</div>
+	</div>
+	<footer>
+		<div class="container">Tuesdays Group 2013</div>
+	</footer>	
 
-<%= yield %>
+<div class="container"><%= yield %></div>
 
 </body>
 </html>

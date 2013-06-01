@@ -1,5 +1,5 @@
 class Place < ActiveRecord::Base
-  attr_accessible :address, :name, :zip, :picture, :country, :comments
+  attr_accessible :address, :name, :zip, :picture, :country, :comments, :city
 
   validates :address, :name, :presence => true
 
@@ -14,7 +14,7 @@ class Place < ActiveRecord::Base
   acts_as_gmappable :process_geocoding => false
 
   def full_address
-    address + ' ' + zip
+    address + ' ' + city + zip
   end  
 
 end

@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <b>City:</b>
+  <%= @place.city %>
+</p>
+
+<p>
   <b>Zip:</b>
   <%= @place.zip %>
 </p>
@@ -25,7 +30,7 @@
   <%= @place.comments %>
 </p>
 
-<%= image_tag(@place.picture_url, :width => 600) if @place.picture.present? %>
+<%= image_tag(@place.picture_url, :width => 250) if @place.picture.present? %>
 
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+<%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-warning'%>
+<%= link_to 'Back', places_path, class: 'btn btn-primary' %>
