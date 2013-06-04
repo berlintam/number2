@@ -2,4 +2,9 @@
 $bodyBackground: grey;
 $navbarHeight: 75px;
 
+.carousel img {
+	min-width: 100%;
+	height: 500px;
+}
+
 @import "bootstrap";
