@@ -13,6 +13,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'carmen-rails', '~> 1.0.0'
 gem 'bootstrap-sass'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,4 +1,7 @@
 class PlacesController < ApplicationController
+  #before_filter :authenticate_user!, :only => [:show, :edit, :destroy]
+
+  #http_basic_authenticate_with :name => "Tam", :password => "Tam"
   # GET /places
   # GET /places.json
   def index

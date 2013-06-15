@@ -1,6 +1,6 @@
 <h1></h1>
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
  <tr>
     <th>Name</th>
     <th>Address</th>
@@ -9,6 +9,7 @@
     <th>Country</th>
     <th>Comments</th>
     <th>Picture</th>
+    <!-- 3 empty table haders for actions show, edit, destroy -->
     <th></th>
     <th></th>
     <th></th>
@@ -27,9 +28,9 @@
     <td><%= place.country %></td>
     <td><%= truncate(place.comments, :length => 20) if place.comments.present? %></td>
     <td><%= image_tag(place.picture_url, :width => 60) if place.picture.present? %></td>
-    <td><%= link_to 'Show', place, class: 'btn btn-success' %></td>
-    <td><%= link_to 'Edit', edit_place_path(place), class: 'btn btn-warning' %></td>
-    <td><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+    <td><%= link_to 'Show', place, class: 'btn btn-success' if user_signed_in? %></td>
+    <td><%= link_to 'Edit', edit_place_path(place), class: 'btn btn-warning' if user_signed_in? %></td>
+    <td><%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' if user_signed_in? %></td>
   </tr>
 <% end %>
 </table>
